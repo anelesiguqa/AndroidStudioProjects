@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">InchesToMeters</string>
+    <string name="enter_value_in_inches">Enter value in inches</string>
+    <string name="calculate_btn_text">Calculate Meters</string>
+</resources>
