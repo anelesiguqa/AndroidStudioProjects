@@ -14,10 +14,14 @@
         tools:targetApi="31">
         <activity
             android:name=".PlacesToGo"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Place to go"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ThingsToDo"
-            android:exported="false" />
+            android:exported="false"
+            android:label="Things to do"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
