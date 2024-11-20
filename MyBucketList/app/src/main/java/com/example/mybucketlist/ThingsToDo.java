@@ -16,14 +16,14 @@ public class ThingsToDo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_things_to_do);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.recyler_view_things_todo), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.recycler_view_things_todo), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
         ToDo[] toDoList = {
-                new ToDo("Task 1"),
+                new ToDo("Salad 1"),
                 new ToDo("Task 2"),
                 new ToDo("Task 3"),
                 new ToDo("Task 4"),
@@ -35,8 +35,7 @@ public class ThingsToDo extends AppCompatActivity {
                 new ToDo("Task 10")
         };
 
-        RecyclerView thingsToDo = findViewById(R.id.recyler_view_things_todo);
-        Adapter adapter = new Adapter(toDoList);
-        thingsToDo.setAdapter(adapter);
+        RecyclerView thingsToDo = findViewById(R.id.recycler_view_things_todo);
+        thingsToDo.setAdapter(new Adapter(toDoList));
     }
 }

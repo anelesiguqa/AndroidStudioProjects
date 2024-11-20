@@ -1,7 +1,5 @@
 package com.example.mybucketlist;
 
-import android.widget.TextView;
-
 public class ToDo {
     String name;
 

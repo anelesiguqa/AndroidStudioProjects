@@ -14,6 +14,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     public Adapter(ToDo[] todos) {
         this.toDos = todos;
     }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
