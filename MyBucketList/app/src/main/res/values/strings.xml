@@ -4,4 +4,5 @@
     <string name="places_to_go_content_description">Places to go</string>
     <string name="things_to_do_image_label">Things to do</string>
     <string name="places_to_go_label">Places to go</string>
+    <string name="bucket_list_image">bucket_list_image</string>
 </resources>

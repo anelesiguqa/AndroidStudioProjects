@@ -23,16 +23,10 @@ public class ThingsToDo extends AppCompatActivity {
         });
 
         ToDo[] toDoList = {
-                new ToDo("Salad 1"),
-                new ToDo("Task 2"),
-                new ToDo("Task 3"),
-                new ToDo("Task 4"),
-                new ToDo("Task 5"),
-                new ToDo("Task 6"),
-                new ToDo("Task 7"),
-                new ToDo("Task 8"),
-                new ToDo("Task 9"),
-                new ToDo("Task 10")
+                new ToDo("Bowling", R.drawable.engin_akyurt_yxiw_hx3lya_unsplash),
+                new ToDo("Skateboarding", R.drawable.glenn_carstens_peters_malbj24jkru_unsplash),
+                new ToDo("Drawing", R.drawable.kelvin_zyteng_f7dedjeze5u_unsplash),
+                new ToDo("Table Soccer", R.drawable.norbert_braun_z40ffxn34sy_unsplash),
         };
 
         RecyclerView thingsToDo = findViewById(R.id.recycler_view_things_todo);
