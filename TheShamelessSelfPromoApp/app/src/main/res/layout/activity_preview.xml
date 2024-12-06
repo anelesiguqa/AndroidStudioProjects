@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PreviewActivity"
+    android:padding="48dp"
+    >
+    
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="#fff8cb"
+        app:cardCornerRadius="6dp"
+        app:cardUseCompatPadding="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textSize="18sp"
+            android:fontFamily="sans-serif-light"
+            android:textColor="#212121"
+            android:layout_margin="12dp"
+            tools:text="This will dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/text_view_message"/>
+    </androidx.cardview.widget.CardView>
+    <Button
+        android:id="@+id/button_send_message"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:text="Send message"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

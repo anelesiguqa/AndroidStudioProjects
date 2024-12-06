@@ -1,5 +1,6 @@
 package za.co.anelesiguqa.selfpromoapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -14,7 +15,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
+        binding = ActivityMainBinding.inflate(layoutInflater)
         binding.buttonPreview.setOnClickListener {
             onPreviewClicked()
         }
@@ -36,9 +37,16 @@ class MainActivity : AppCompatActivity() {
         val immediateStart = binding.checkBoxImmediateStart.isChecked
         val startDate = binding.editTextStartDate.text.toString()
 
-        val testString = "Contact Name: $contactName, Contact Number: $contactNumber, My Display Name: $myDisplayName," +
-                " Include Junior: $includeJunior, Job Title: $jobTitle, Immediate Start: $immediateStart, Start Date: $startDate"
-        Toast.makeText(this, testString, Toast.LENGTH_LONG).show()
+
+        val previewActivityIntent = Intent(this, PreviewActivity::class.java)
+        previewActivityIntent.putExtra("Contact Name", contactName)
+        previewActivityIntent.putExtra("Contact Number", contactNumber)
+        previewActivityIntent.putExtra("My Display Name", myDisplayName)
+        previewActivityIntent.putExtra("Include Junior", includeJunior)
+        previewActivityIntent.putExtra("Job Title", jobTitle)
+        previewActivityIntent.putExtra("Immediate Start", immediateStart)
+        previewActivityIntent.putExtra("Start Date", startDate)
+        startActivity(previewActivityIntent)
     }
 
 }
