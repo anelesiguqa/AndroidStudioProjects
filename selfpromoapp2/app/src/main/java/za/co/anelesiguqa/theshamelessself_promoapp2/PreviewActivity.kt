@@ -1,6 +1,9 @@
 package za.co.anelesiguqa.theshamelessself_promoapp2
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.widget.Button
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +11,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class PreviewActivity : AppCompatActivity() {
+    private lateinit var message: Message
+    private lateinit var messagePreviewText: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -17,24 +22,33 @@ class PreviewActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val contactName = intent.getStringExtra("Contact Name")
-        val contactNumber = intent.getStringExtra("Contact Number")
-        val myDisplayName = intent.getStringExtra("My Display Name")
-        val includeJunior = intent.getBooleanExtra("Include Junior", false)
-        val jobTitle = intent.getStringExtra("Job Title")
-        val immediateStart = intent.getBooleanExtra("Immediate Start", false)
-        val startDate = intent.getStringExtra("Start Date")
+        displayMessage()
+        setupButton()
+    }
 
-        val concatenatedString = """
-    Contact Name: $contactName
-    Contact Number: $contactNumber
-    My Display Name: $myDisplayName
-    Include Junior: $includeJunior
-    Job Title: $jobTitle
-    Immediate Start: $immediateStart
-    Start Date: $startDate
-""".trimIndent()
+    private fun displayMessage() {
+        message = intent.getSerializableExtra("Message") as Message
 
-    findViewById<TextView>(R.id.text_view_message).text = concatenatedString
+        messagePreviewText = """
+        Contact Name: ${message.contactNumber}
+        Contact Number: ${message.contactNumber}
+        My Display Name: ${message.myDisplayName}
+        Include Junior: ${message.includeJunior}
+        Job Title: ${message.jobTitle}
+        Immediate Start: ${message.immediateStart}
+        Start Date: ${message.startDate}
+    """.trimIndent()
+
+        findViewById<TextView>(R.id.text_view_message).text = messagePreviewText
+    }
+
+    private fun setupButton() {
+        findViewById<Button>(R.id.button_send_message).setOnClickListener {
+            val intent = Intent(Intent.ACTION_SENDTO).apply {
+                data = Uri.parse("smsto: ${message.contactNumber}")
+                putExtra("sms_body", messagePreviewText)
+            }
+            startActivity(intent)
+        }
     }
 }

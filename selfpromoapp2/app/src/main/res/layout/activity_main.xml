@@ -14,7 +14,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Contact Name">
+            android:hint="@string/hint_contact_name">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:inputType="textCapWords"
@@ -28,15 +28,14 @@
             android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="contact_number">
+            android:hint="@string/hint_contact_number">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:inputType="phone"
                 android:id="@+id/edit_text_contact_number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                tools:text="067 777 7777" />
+                android:layout_marginTop="8dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -44,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_marginTop="8dp"
             android:layout_height="wrap_content"
-            android:hint="my_display_name">
+            android:hint="@string/hint_my_display_name">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:inputType="textCapWords"
@@ -52,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                tools:text="Great Wanda" />
+                />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -61,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Include 'Junior'" />
+            android:text="@string/checkbox_text_include_junior" />
 
         <Spinner
             android:id="@+id/spinner_job_title"
@@ -75,12 +74,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="Immediate Start" />
+            android:text="@string/checkbox_text_immediate_start" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_marginTop="8dp"
-            android:hint="Available from date"
+            android:hint="@string/hint_available_from_date"
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -100,6 +99,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Preview Message" />
+            android:text="@string/button_text_preview_message" />
     </LinearLayout>
 </ScrollView>
