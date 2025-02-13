@@ -1,5 +1,6 @@
 package com.example.userregistrationapp
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Spinner
@@ -30,6 +31,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         getControls()
+        previewDetails()
     }
 
     private fun getControls() {
@@ -43,7 +45,17 @@ class MainActivity : AppCompatActivity() {
     }
     private fun previewDetails() {
         previewDetialsButton.setOnClickListener {
-            //Toast(this, "Happy holidays", Toast.LENGTH_LONG).show()
+            val title = this.title.selectedItem.toString()
+            val firstName = firstNameEditText.text.toString()
+            val lastName = lastNameEditText.text.toString()
+            val email = emailEditText.text.toString()
+            val number = numberEditText.text.toString()
+
+            val userDetails = User(title, firstName, lastName, email, number)
+            val summaryIntent = Intent(this, Summary::class.java)
+            summaryIntent.putExtra("User", userDetails)
+
+            startActivity(summaryIntent)
         }
     }
 }
