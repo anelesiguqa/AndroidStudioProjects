@@ -33,6 +33,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         getControls()
+        initialTitleSpinner()
         previewDetails()
     }
 
@@ -47,11 +48,6 @@ class MainActivity : AppCompatActivity() {
     }
     private fun previewDetails() {
         previewDetialsButton?.setOnClickListener {
-
-            val titleOptions = arrayOf("Mr", "Miss", "Sir")
-            val titleOptionsAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listOf("Mr", "Miss"))
-            this.title?.adapter = titleOptionsAdapter
-
             val title = this.title?.selectedItem.toString()
             val firstName = firstNameEditText?.text.toString()
             val lastName = lastNameEditText?.text.toString()
@@ -65,5 +61,10 @@ class MainActivity : AppCompatActivity() {
 
             startActivity(summaryIntent)
         }
+    }
+    private fun initialTitleSpinner() {
+        val titleOptions = arrayOf("Mr", "Miss", "Sir")
+        val titleOptionsAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, titleOptions)
+        this.title?.adapter = titleOptionsAdapter
     }
 }

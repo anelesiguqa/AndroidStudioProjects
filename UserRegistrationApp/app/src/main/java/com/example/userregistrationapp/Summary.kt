@@ -34,8 +34,12 @@ class Summary : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     private fun createSummary() {
         val user = intent.getSerializableExtra("User", User::class.java)
-        text_view_firtName?.text = user?.firstName
 
+        text_view_title?.text = user?.title
+        text_view_firtName?.text = user?.firstName
+        text_view_lastName?.text = user?.lastName
+        text_view_email?.text = user?.email
+        text_view_number?.text = user?.number
     }
     private fun findViews() {
       text_view_title = findViewById(R.id.text_view_title)
