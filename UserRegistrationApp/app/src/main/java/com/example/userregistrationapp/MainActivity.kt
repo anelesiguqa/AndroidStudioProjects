@@ -2,6 +2,8 @@ package com.example.userregistrationapp
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
 import android.widget.Toast
@@ -12,13 +14,13 @@ import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var title: Spinner
-    private lateinit var firstNameEditText: TextInputEditText
-    private lateinit var lastNameEditText: TextInputEditText
-    private lateinit var emailEditText: TextInputEditText
-    private lateinit var numberEditText: TextInputEditText
-    private lateinit var passwordEditText: TextInputEditText
-    private lateinit var previewDetialsButton: Button
+    private var title: Spinner? = null
+    private var firstNameEditText: TextInputEditText? = null
+    private var lastNameEditText: TextInputEditText? = null
+    private var emailEditText: TextInputEditText? = null
+    private var numberEditText: TextInputEditText? = null
+    private var passwordEditText: TextInputEditText? = null
+    private var previewDetialsButton: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,16 +46,22 @@ class MainActivity : AppCompatActivity() {
         previewDetialsButton = findViewById(R.id.button_preview_details)
     }
     private fun previewDetails() {
-        previewDetialsButton.setOnClickListener {
-            val title = this.title.selectedItem.toString()
-            val firstName = firstNameEditText.text.toString()
-            val lastName = lastNameEditText.text.toString()
-            val email = emailEditText.text.toString()
-            val number = numberEditText.text.toString()
+        previewDetialsButton?.setOnClickListener {
+
+            val titleOptions = arrayOf("Mr", "Miss", "Sir")
+            val titleOptionsAdapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, listOf("Mr", "Miss"))
+            this.title?.adapter = titleOptionsAdapter
+
+            val title = this.title?.selectedItem.toString()
+            val firstName = firstNameEditText?.text.toString()
+            val lastName = lastNameEditText?.text.toString()
+            val email = emailEditText?.text.toString()
+            val number = numberEditText?.text.toString()
 
             val userDetails = User(title, firstName, lastName, email, number)
             val summaryIntent = Intent(this, Summary::class.java)
             summaryIntent.putExtra("User", userDetails)
+            print("momo")
 
             startActivity(summaryIntent)
         }
