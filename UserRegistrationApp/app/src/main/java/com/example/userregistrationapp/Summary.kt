@@ -1,8 +1,11 @@
 package com.example.userregistrationapp
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -29,6 +32,7 @@ class Summary : AppCompatActivity() {
 
         findViews()
         createSummary()
+        setupEmailClickHandler()
     }
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
@@ -47,5 +51,17 @@ class Summary : AppCompatActivity() {
       text_view_lastName = findViewById(R.id.text_view_last_name)
       text_view_email = findViewById(R.id.text_view_email)
       text_view_number = findViewById(R.id.text_view_number)
+    }
+    private fun setupEmailClickHandler() {
+        text_view_email?.setOnClickListener {
+            val intent = Intent(Intent.ACTION_SENDTO)
+            intent.data = Uri.parse("mailto:${text_view_email?.text.toString()}")
+            startActivity(intent)
+        }
+        text_view_number?.setOnClickListener {
+            val intent = Intent(Intent.ACTION_DIAL)
+            intent.data = Uri.parse("tel:${text_view_number?.text.toString()}")
+            startActivity(intent)
+        }
     }
 }
