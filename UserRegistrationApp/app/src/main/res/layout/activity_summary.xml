@@ -3,50 +3,61 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@drawable/gradient_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="36dp"
     tools:context=".Summary">
 
     <TextView
+        android:layout_marginTop="24dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
         android:text="SUMMARY"
         android:textAlignment="center"
-        android:textSize="30sp" />
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/text_view_title"
+        android:layout_marginTop="48dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:textSize="16sp"
         tools:text="Mr" />
 
     <TextView
         android:id="@+id/text_view_first_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:textSize="16sp"
+        android:layout_marginTop="24dp"
         tools:text="Wanda" />
 
     <TextView
+        android:layout_marginTop="24dp"
         android:id="@+id/text_view_last_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:textSize="16sp"
         tools:text="Siguqa" />
 
     <TextView
         android:id="@+id/text_view_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:textSize="16sp"
+        android:textColor="@color/blue_accent"
+        android:layout_marginTop="24dp"
         tools:text="wanda@gmail.com" />
 
     <TextView
+        android:textColor="@color/blue_accent"
+        android:layout_marginTop="24dp"
         android:id="@+id/text_view_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
+        android:textSize="16sp"
         tools:text="074 333 3333" />
 </LinearLayout>
