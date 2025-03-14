@@ -13,7 +13,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Register User"
+        android:text="@string/activity_main_register_title"
         android:textSize="30sp" />
 
     <LinearLayout
@@ -33,7 +33,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="First Name">
+            android:hint="@string/activity_main_first_name_hint">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_firstName"
@@ -45,7 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="Last Name">
+            android:hint="@string/activity_main_last_name">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_last_name"
@@ -57,11 +57,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="Email">
+            android:hint="@string/activity_main_email_hint">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_email"
                 android:layout_width="match_parent"
+                android:inputType="textEmailAddress"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -69,11 +70,12 @@
             android:layout_width="match_parent"
             android:layout_marginTop="20dp"
             android:layout_height="wrap_content"
-            android:hint="Cell Number">
+            android:hint="@string/activity_main_cell_number_hint">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_number"
                 android:layout_width="match_parent"
+                android:inputType="phone"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -81,10 +83,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="password">
+            app:passwordToggleEnabled="true"
+            android:hint="@string/activity_main_password_hint">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_text_password"
                 android:layout_width="match_parent"
+                android:inputType="textPassword"
                 android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -92,7 +96,7 @@
             android:layout_marginTop="20dp"
             android:id="@+id/button_preview_details"
             android:layout_gravity="center_horizontal"
-            android:text="PREVIEW DETAILS"
+            android:text="@string/activity_main_preview_button_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     </LinearLayout>
